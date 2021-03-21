@@ -1,13 +1,95 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.nav {
+  width: 100%;
+  height: 80px;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+.head {
+  padding-top: 30px;
+  font-size: 24px;
+}
+.posts {
+  align-items: center;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-bottom: 5%;
+}
+.card {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  height: 10%;
+  border: solid #5b6dcd 1px;
+  border-radius: 4px;
+  margin: 10px;
+}
+.card:hover {
+  background-color: #dddff0;
+}
+.heart-favorite {
+  cursor: pointer;
+  color: red;
+  font-size: 25px;
+}
+.heart-favorite:hover {
+  color: gray;
+}
+.text .favorite {
+  padding: 10px;
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.heart-open {
+  cursor: pointer;
+  color: gray;
+  font-size: 25px;
+}
+.heart-open:hover {
+  color: red;
+}
+
+.button-see-more {
+  text-align: center;
+  padding-bottom: 20px;
+}
+.button-see-more button {
+  font-size: 20px;
+  padding: 5px;
+  background-color: blue;
+  color: white;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+}
+.heading {
+  text-align: center;
+  font-weight: bold;
+  font-size: 28px;
+}
+.title {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .posts {
+    align-items: center;
+    padding-left: 0;
+    padding-right: 20;
+  }
 }
