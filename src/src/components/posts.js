@@ -2,8 +2,6 @@ import { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import "../index.css";
-import { Switch, Route } from "react-router";
-import PostId from "./PostId";
 
 class Posts extends Component {
   constructor(props) {
@@ -13,6 +11,9 @@ class Posts extends Component {
       page: 1,
     };
   }
+  goToIdPage(id) {
+    this.props.history.push(`/${id}`);
+  }
   componentWillMount() {
     fetch(`https://serverfake.herokuapp.com/posts/?_page=${this.state.page}`)
       .then((res) => res.json())
@@ -21,16 +22,6 @@ class Posts extends Component {
       });
   }
   render() {
-    const goToIdPage = (id) => {
-      <Switch>
-        <Route
-          exact
-          activeClassName="active"
-          path={`/${id}`}
-          component={PostId}
-        ></Route>
-      </Switch>;
-    };
     const fetchPosts = (page) => {
       console.log(page);
       fetch(`https://serverfake.herokuapp.com/posts/?_page=${page}`)
@@ -97,7 +88,7 @@ class Posts extends Component {
     };
     const postItem = this.state.posts.map((post) => (
       <div className="card" key={post.id}>
-        <h2 className="title" onClick={() => goToIdPage(post.id)}>
+        <h2 className="title" onClick={() => this.goToIdPage(post.id)}>
           {post.title}
         </h2>
         <p>{post.body}</p>

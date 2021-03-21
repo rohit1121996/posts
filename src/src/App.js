@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 import Posts from "./components/posts";
 import Favorite from "./components/favorite";
+import PostId from "./components/PostId";
 
 function App() {
   return (
@@ -23,6 +24,12 @@ function App() {
             activeClassName="active"
             path="/favpost"
             component={Favorite}
+          ></Route>
+          <Route
+            exact
+            activeClassName="active"
+            path="/:id"
+            component={PostId}
           ></Route>
           <Route
             exact

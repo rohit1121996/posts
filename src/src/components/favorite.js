@@ -10,6 +10,9 @@ class Favorite extends Component {
       page: 1,
     };
   }
+  goToIdPage(id) {
+    this.props.history.push(`/${id}`);
+  }
   componentWillMount() {
     fetch(
       `https://serverfake.herokuapp.com/posts/?_page=${this.state.page}&isFavourite=true`
@@ -69,7 +72,7 @@ class Favorite extends Component {
     };
     const postItem = this.state.posts.map((post) => (
       <div className="card" key={post.id}>
-        <h2 className="title" onClick={() => goToIdPage(post.id)}>
+        <h2 className="title" onClick={() => this.goToIdPage(post.id)}>
           {post.title}
         </h2>
         <p>{post.body}</p>

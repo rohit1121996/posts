@@ -85,6 +85,11 @@ code {
 .title {
   cursor: pointer;
 }
+.card-item {
+  margin: auto;
+  padding-left: 20%;
+  padding-right: 20%;
+}
 
 @media only screen and (max-width: 600px) {
   .posts {
