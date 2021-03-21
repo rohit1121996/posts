@@ -62,12 +62,7 @@ class PostId extends Component {
     return (
       <div className="card-item">
         <div className="card">
-          <h2
-            className="title"
-            onClick={() => this.goToIdPage(this.state.post.id)}
-          >
-            {this.state.post.title}
-          </h2>
+          <h2 className="title">{this.state.post.title}</h2>
           <p>{this.state.post.body}</p>
           <span id="heart">
             {this.state.post.isFavourite ? (
